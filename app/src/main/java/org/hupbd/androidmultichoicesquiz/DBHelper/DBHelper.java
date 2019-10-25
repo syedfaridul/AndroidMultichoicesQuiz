@@ -68,7 +68,8 @@ GET ALL CATEGORIES FROM DB
         if (cursor.moveToFirst()) {
 
             while (!cursor.isAfterLast()) {
-                Question question = new Question(cursor.getInt(cursor.getColumnIndex("ID")),
+                Question question = new Question(
+                        cursor.getInt(cursor.getColumnIndex("ID")),
                         cursor.getString(cursor.getColumnIndex("QuestionText")),
                         cursor.getString(cursor.getColumnIndex("QuestionImage")),
                         cursor.getString(cursor.getColumnIndex("AnswerA")),
@@ -76,7 +77,7 @@ GET ALL CATEGORIES FROM DB
                         cursor.getString(cursor.getColumnIndex("AnswerC")),
                         cursor.getString(cursor.getColumnIndex("AnswerD")),
                         cursor.getString(cursor.getColumnIndex("CorrectAnswer")),
-                        cursor.getInt(cursor.getColumnIndex("IsImageQuestion")),
+                        cursor.getInt(cursor.getColumnIndex("IsImageQuestion")) == 0?Boolean.FALSE:Boolean.TRUE,
                         cursor.getInt(cursor.getColumnIndex("CategoryID")));
                 questions.add(question);
                 cursor.moveToNext();

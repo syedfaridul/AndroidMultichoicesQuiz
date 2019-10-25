@@ -61,7 +61,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
                 public void onClick(View view) {
 
                     Common.selectedCategory = categories.get(getAdapterPosition());//Assign current Category
-                    Intent intent = new Intent(context, QuestionActivity.class);
+                    Intent intent = new Intent(context,QuestionActivity.class);
                     context.startActivity(intent);
 
                 }
